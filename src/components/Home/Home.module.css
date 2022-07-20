@@ -1,0 +1,12 @@
+.Container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+
+
+/**CSS DEL ALERT */
+

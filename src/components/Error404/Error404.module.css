@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&display=swap');
+.Container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container h1{
+    font-size: 10rem;
+    font-family: arial;
+    text-shadow: 2px 2px 10px black;
+}
+
+
+
+.Container p{
+    font-size: 5rem;
+    font-family: 'Edu TAS Beginner', cursive;
+}
+
+@media screen and (max-width: 968px){
+
+    .Container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .Container p{
+        font-size: 3rem;
+    }
+}

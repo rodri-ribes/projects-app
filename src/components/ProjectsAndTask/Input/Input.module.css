@@ -1,0 +1,19 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.Container input{
+    width: 300px;
+    height: 30px;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-family: lucida sans;
+    border: none;
+    outline: none;
+}
+
+
