@@ -13,7 +13,7 @@ export default function RenderNoLogged() {
             </p>
             <p className={style.Container__Alert_p}>This project was made with the following technologies:
                 ReactJS, ReduxJS, NodeJS, Express, Sequelize. and for the database use PostgreSQL.
-                For the security of each account use modules such as Encrypt and JWT
+                For the security of each account use modules such as Bcrypt and JWT
             </p>
         </div>
     )
