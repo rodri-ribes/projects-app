@@ -15,6 +15,7 @@ export default function SignIn() {
     const [confirm, setConfirm] = useState({
         message: "",
         visible: null,
+        error: null,
     })
 
     let navigate = useNavigate()
@@ -51,10 +52,10 @@ export default function SignIn() {
 
                     dispatch(getUser(resp.data));
 
-                    setConfirm({ message: "You logged in successfully", visible: true })
+                    setConfirm({ message: "You logged in successfully", visible: true, error: false })
 
                     setTimeout(() => {
-                        setConfirm({ message: "", visible: null })
+                        setConfirm({ message: "", visible: null, error: null })
                         dispatch(getProjects(resp.data))
                         navigate("/")
                     }, 2000);
@@ -63,9 +64,9 @@ export default function SignIn() {
 
                 } catch (error) {
 
-                    setConfirm({ message: error.response.data, visible: false })
+                    setConfirm({ message: error.response.data, visible: true, error: true })
                     setTimeout(() => {
-                        setConfirm({ message: "", visible: null })
+                        setConfirm({ message: "", visible: null, error: null })
                     }, 2000);
 
                 }
@@ -75,7 +76,7 @@ export default function SignIn() {
 
                 if (!valores.email) {
                     errores.email = "Enter email"
-                } else if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/.test(valores.email)) {
+                } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
                     errores.email = "Enter a valid email"
                 }
                 if (!valores.password) {
@@ -109,7 +110,7 @@ export default function SignIn() {
                             <ErrorMessage name='password' component={() => (<div className={style.Container__Div_Error}><p>{errors.password}</p></div>)} />
                         </div>
                         <button type='submit' className={style.Container__Button}>SignIn</button>
-                        {confirm ? <div className={style.Container__Div_Sucess}><p>{confirm.message}</p></div> : <div className={style.Container__Div_NotSucess}><p>{confirm.message}</p></div>}
+                        {confirm.visible ? <div className={`${confirm.error ? style.Container__Div_NotSucess : style.Container__Div_Sucess}`}><p>{confirm.message}</p></div> : null}
                     </Form>
                 </div>
             )}

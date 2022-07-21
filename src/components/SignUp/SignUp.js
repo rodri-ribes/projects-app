@@ -12,6 +12,7 @@ export default function SignUp() {
     const [confirm, setConfirm] = useState({
         message: "",
         visible: null,
+        error: null,
     })
 
     let navigate = useNavigate()
@@ -53,10 +54,10 @@ export default function SignUp() {
 
                     dispatch(getUser(resp.data))
 
-                    setConfirm({ message: "Successfully registered", visible: true })
+                    setConfirm({ message: "Successfully registered", visible: true, error: false })
 
                     setTimeout(() => {
-                        setConfirm({ message: "", visible: null })
+                        setConfirm({ message: "", visible: null, error: null })
                         navigate("/")
                     }, 2000);
 
@@ -65,9 +66,9 @@ export default function SignUp() {
 
                 } catch (error) {
 
-                    setConfirm({ message: error.response.data, visible: false })
+                    setConfirm({ message: error.response.data, visible: true, error: true })
                     setTimeout(() => {
-                        setConfirm({ message: "", visible: null })
+                        setConfirm({ message: "", visible: null, error: null })
                     }, 2000);
 
                 }
@@ -82,7 +83,7 @@ export default function SignUp() {
                 }
                 if (!valores.email) {
                     errores.email = "Enter email"
-                } else if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/.test(valores.email)) {
+                } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
                     errores.email = "Enter a valid email"
                 }
                 if (!valores.password) {
@@ -139,7 +140,7 @@ export default function SignUp() {
                             <ErrorMessage name='password2' component={() => (<div className={style.Container__Div_Error}><p>{errors.password2}</p></div>)} />
                         </div>
                         <button type='submit' className={style.Container__Button}>SignUp</button>
-                        {confirm ? <div className={style.Container__Div_Sucess}><p>{confirm.message}</p></div> : <div className={style.Container__Div_NotSucess}><p>{confirm.message}</p></div>}
+                        {confirm.visible ? <div className={`${confirm.error ? style.Container__Div_NotSucess : style.Container__Div_Sucess}`}><p>{confirm.message}</p></div> : null}
                     </Form>
                 </div>
             )}

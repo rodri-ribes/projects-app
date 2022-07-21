@@ -11,9 +11,7 @@ export default function RenderNoLogged() {
                 <Link to='/signin' className={style.Container__Alert_p_Link}> login </Link>
                 to view or upload projects
             </p>
-            <p className={style.Container__Alert_p}>This project was made with the following technologies:
-                ReactJS, ReduxJS, NodeJS, Express, Sequelize. and for the database use PostgreSQL.
-                For the security of each account use modules such as Bcrypt and JWT
+            <p className={style.Container__Alert_p}>This project was made with the following technologies: ReactJS, ReduxJS, NodeJS, Express, Sequelize. and for the database PostgreSQL is used. For the security of each account, modules such as Bcrypt and JWT are used.
             </p>
         </div>
     )
