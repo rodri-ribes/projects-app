@@ -1,9 +1,9 @@
-import app from "./app.js";
-import { sequelize } from './database/database.js';
+import app from "./src/app.js";
+import { sequelize } from './src/database/database.js';
 
-import "./models/Project.js";
-import "./models/Task.js";
-import "./models/Users.js";
+import "./src/models/Project.js";
+import "./src/models/Task.js";
+import "./src/models/Users.js";
 
 
 async function main() {
