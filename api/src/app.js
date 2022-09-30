@@ -1,12 +1,18 @@
-import express from "express";
+import express, { Router } from "express";
 import projectsRoutes from './routes/projects.routes.js';
 import taskRoutes from './routes/task.routes.js';
 import usersRoutes from './routes/users.routers.js';
-import cors from 'cors'
+// import cors from 'cors'
 
 const app = express();
 
-app.use(cors())
+const router = Router()
+
+router.get("/", (req, res) => {
+    res.send("server is load")
+})
+
+// app.use(cors())
 app.use(express.json())
 
 app.use(projectsRoutes);

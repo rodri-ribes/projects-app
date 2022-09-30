@@ -6,6 +6,7 @@ import "./src/models/Task.js";
 import "./src/models/Users.js";
 
 
+
 async function main() {
     try {
         await sequelize.sync({ force: false })
