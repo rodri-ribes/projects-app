@@ -9,7 +9,7 @@ import "./src/models/Users.js";
 
 async function main() {
     try {
-        await sequelize.sync({ force: false })
+        // await sequelize.sync({ force: false })
         app.listen(process.env.PORT || 3001, () => console.log('Server is listening... 3001'))
     } catch (error) {
         console.error('Unable to connect to the database:', error);
