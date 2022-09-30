@@ -11,5 +11,5 @@ export const sequelize = new Sequelize("postgresql://postgres:tveE3y5oW6aREykN39
     //         rejectUnauthorized: false
     //     }
     // },
-    // dialectModule: "pg"
+    dialectModule: pg
 })
