@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getTasks } from '../../../../redux/features/user/userSlice';
 
-const { REACT_API } = process.env;
+const { REACT_APP_API } = process.env;
 
 
 export default function ModyTask({ idProject }) {
@@ -38,7 +38,7 @@ export default function ModyTask({ idProject }) {
                 let user = JSON.parse(window.localStorage.getItem("user"))
 
                 try {
-                    await axios.put(`${REACT_API}/tasks/${change}`, {
+                    await axios.put(`${REACT_APP_API}/tasks/${change}`, {
                         name, description, done
                     }, {
                         headers: {

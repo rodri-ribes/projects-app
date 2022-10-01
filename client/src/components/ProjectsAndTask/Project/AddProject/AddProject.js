@@ -6,7 +6,7 @@ import axios from 'axios'
 import { getProjects } from '../../../../redux/features/user/userSlice.js';
 
 
-const { REACT_API } = process.env;
+const { REACT_APP_API } = process.env;
 
 
 
@@ -39,7 +39,7 @@ export default function AddProject() {
                 let { id } = user;
 
                 try {
-                    await axios.post(`${REACT_API}/projects`, {
+                    await axios.post(`${REACT_APP_API}/projects`, {
                         name, priority, description, id
                     }, {
                         headers: {

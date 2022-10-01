@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProjects } from '../../redux/features/user/userSlice';
 import { getUser } from '../../redux/features/user/userSlice';
 
-const { REACT_API } = process.env;
+const { REACT_APP_API } = process.env;
 
 
 export default function SignIn() {
@@ -46,7 +46,7 @@ export default function SignIn() {
                 let { email, password } = valores;
 
                 try {
-                    let resp = await axios.post(`${REACT_API}/signin`, {
+                    let resp = await axios.post(`${REACT_APP_API}/signin`, {
                         password, email
                     })
                     window.localStorage.setItem("user", JSON.stringify(resp.data))
