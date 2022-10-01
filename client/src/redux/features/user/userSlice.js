@@ -2,6 +2,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const { REACT_API } = process.env;
+
+
+
 export const userSlice = createSlice({
     name: "user",
     initialState: {
@@ -42,7 +46,7 @@ export const getProjects = () => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     let { id } = user
     try {
-        const resp = await axios.get(`https://project-ribes.herokuapp.com/projects/${id}`, {
+        const resp = await axios.get(`${REACT_API}/projects/${id}`, {
             headers: {
                 "x-access-token": user.token
             }
@@ -56,7 +60,7 @@ export const getProjects = () => async (dispatch) => {
 export const deleteProject = (id) => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     try {
-        await axios.delete(`https://project-ribes.herokuapp.com/projects/${id}`, {
+        await axios.delete(`${REACT_API}/projects/${id}`, {
             headers: {
                 "x-access-token": user.token
             }
@@ -70,7 +74,7 @@ export const deleteProject = (id) => async (dispatch) => {
 export const getTasks = (id) => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     try {
-        const resp = await axios.get(`https://project-ribes.herokuapp.com/tasks/${id}`, {
+        const resp = await axios.get(`${REACT_API}/tasks/${id}`, {
             headers: {
                 "x-access-token": user.token
             }
@@ -84,7 +88,7 @@ export const getTasks = (id) => async (dispatch) => {
 export const getProject = (id) => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     try {
-        const resp = await axios.get(`https://project-ribes.herokuapp.com/project/${id}`, {
+        const resp = await axios.get(`${REACT_API}/project/${id}`, {
             headers: {
                 "x-access-token": user.token
             }
@@ -98,7 +102,7 @@ export const getProject = (id) => async (dispatch) => {
 export const deleteTask = (id) => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     try {
-        await axios.delete(`https://project-ribes.herokuapp.com/tasks/${id}`, {
+        await axios.delete(`${REACT_API}/tasks/${id}`, {
             headers: {
                 "x-access-token": user.token
             }
@@ -113,7 +117,7 @@ export const updateStateTask = (id, done) => async (dispatch) => {
     let user = JSON.parse(window.localStorage.getItem("user"))
     try {
         let estado = !done
-        await axios.put(`https://project-ribes.herokuapp.com/tasks/state/${id}`, {
+        await axios.put(`${REACT_API}/tasks/state/${id}`, {
             estado
         }, {
             headers: {

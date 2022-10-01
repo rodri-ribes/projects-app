@@ -4,6 +4,7 @@ import style from './ModyProject.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getProjects } from '../../../../redux/features/user/userSlice';
+const { REACT_API } = process.env;
 
 
 
@@ -37,7 +38,7 @@ export default function ModyProject() {
                 let user = JSON.parse(window.localStorage.getItem("user"))
 
                 try {
-                    await axios.put(`https://project-ribes.herokuapp.com/projects/${change}`, {
+                    await axios.put(`${REACT_API}/projects/${change}`, {
                         name, priority, description
                     }, {
                         headers: {

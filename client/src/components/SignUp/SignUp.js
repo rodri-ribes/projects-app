@@ -7,6 +7,9 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../../redux/features/user/userSlice';
 
+const { REACT_API } = process.env;
+
+
 export default function SignUp() {
 
     const [confirm, setConfirm] = useState({
@@ -47,7 +50,7 @@ export default function SignUp() {
                 name = name.charAt(0).toUpperCase() + name.slice(1)
 
                 try {
-                    let resp = await axios.post(`https://project-ribes.herokuapp.com/signup`, {
+                    let resp = await axios.post(`${REACT_API}/signup`, {
                         name, password, email
                     })
                     window.localStorage.setItem("user", JSON.stringify(resp.data))

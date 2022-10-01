@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { getTasks } from '../../../../redux/features/user/userSlice';
 
+const { REACT_API } = process.env;
 
 
 
@@ -36,7 +37,7 @@ export default function AddTask({ idProject }) {
                 let user = JSON.parse(window.localStorage.getItem("user"))
 
                 try {
-                    await axios.post(`https://project-ribes.herokuapp.com/tasks/${idProject}`, {
+                    await axios.post(`${REACT_API}/tasks/${idProject}`, {
                         name, description, done
                     }, {
                         headers: {
