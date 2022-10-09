@@ -3,6 +3,7 @@
 2. [Technologies](#technologies)
 3. [Installation](#installation)
 3. [Screenshots](#Screenshots)
+4. [Deploy](https://projects-ribes.netlify.app/)
 
 ### General Info
 ***
