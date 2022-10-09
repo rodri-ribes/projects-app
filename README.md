@@ -30,7 +30,7 @@ A list of technologies used within the project:
 ***
 A little intro about the installation. 
 ```
-$ git clone https://github.com/rodri-ribes/countrys-app.git
+$ git clone https://github.com/rodri-ribes/projects-app.git
 
 ./client
     $ npm install
