@@ -41,8 +41,7 @@ $ git clone https://github.com/rodri-ribes/countrys-app.git
 ```
 ### Screenshots
 ***
-![Home](client/public/img/home.JPG)
-![Content Detail](client/public/img/detailCountry.JPG)
-![Options](client/public/img/options.JPG)
-![Add Activity](client/public/img/addActivity.JPG)
+![Signup](client/public/img/signup.jpg)
+![Add Project](client/public/img/addProject.JPG)
+![Add Task](client/public/img/addTask.jpg)
 ***
