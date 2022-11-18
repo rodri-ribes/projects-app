@@ -3,6 +3,7 @@
 2. [Technologies](#technologies)
 3. [Installation](#installation)
 3. [Screenshots](#Screenshots)
+4. [Deploy](https://projects-ribes.netlify.app/)
 
 ### General Info
 ***
@@ -29,7 +30,7 @@ A list of technologies used within the project:
 ***
 A little intro about the installation. 
 ```
-$ git clone https://github.com/rodri-ribes/countrys-app.git
+$ git clone https://github.com/rodri-ribes/projects-app.git
 
 ./client
     $ npm install
@@ -41,8 +42,7 @@ $ git clone https://github.com/rodri-ribes/countrys-app.git
 ```
 ### Screenshots
 ***
-![Home](client/public/img/home.JPG)
-![Content Detail](client/public/img/detailCountry.JPG)
-![Options](client/public/img/options.JPG)
-![Add Activity](client/public/img/addActivity.JPG)
+![Signup](client/public/img/signup.JPG)
+![Add Project](client/public/img/addProject.JPG)
+![Add Task](client/public/img/addTask.JPG)
 ***
